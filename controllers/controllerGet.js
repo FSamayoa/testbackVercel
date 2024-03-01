@@ -14,6 +14,7 @@ const obtenerContactos = async (req, res) => {
     try {
         const snapshot = await db.ref('contactos').once('value');
         const data = snapshot.val();
+        console.log("es un ",typeof(data));
         res.json(data);
     } catch (error) {
         console.error("Error al obtener datos:", error);
